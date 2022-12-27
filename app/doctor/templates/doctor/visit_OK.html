@@ -1,0 +1,117 @@
+
+
+
+
+{% load static %}
+<html lang="fa" dir=r'rtl'>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>visit</title>
+<!--
+Holiday Template
+http://www.templatemo.com/tm-475-holiday
+-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+{% comment %} <link rel ="stylesheet" type="text/css" href ="{% static 'http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' %} ">
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/font-awesome.min.css' %} ">
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/bootstrap.min.css' %} ">
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/bootstrap-datetimepicker.min.css' %} ">
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/bootstrap.min.css' %} ">
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/flexslider.css' %} ">
+
+<link rel ="stylesheet" type="text/css" href ="{% static 'hotel/css/templatemo-style.css' %} "> {% endcomment %}
+
+
+
+  </head>
+
+{% comment %} <style>
+    body {
+        box-sizing: border-box;
+        background-color: #eee;
+        color: #555;
+      }
+      
+      .container {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 1rem;
+        
+        background-color: #fff;
+        border-radius: 0.5em;
+      }
+      
+      header > h3 {
+        margin-top: 0;
+        font-family: 'Catamaran', sans-serif;
+        font-size: 2.5rem;
+        border-bottom: 1px solid #eee;
+      } {% endcomment %}
+      
+ 
+</style>
+<br>
+<br>
+<br>
+<center>
+
+  <button onclick="window.print()">چاپ</button>
+<br><br>
+<h4 style="font-family:verdana;">لطفا در موقع وقت در درمانگاه حضور نمایید </h4>
+<br>
+<br>
+
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                  
+
+                    <th scope="col">      {{time}}</th>
+                    <th scope="col"> درمانگاه وقار</th>
+                    <th scope="col"></th>
+            
+                    <br>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"></th>
+                    <td> نام</td>
+                    <td>{{name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>نام خانوادکی</td>
+                    <td>{{lastname}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>کد ملی </td>
+                    <td>{{natinal_code}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td>نام دکتر  </td>
+                    <td>{{doctor_name}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"></th>
+                    <td> قیمت وزیت  </td>
+                    <td>{{price}}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <be>
+
+              <h5 style='color:green;'>ثبت شد</h5>
+              <br>
+              <a href='home'>
+                 
+              <button  type="button" class="btn btn-primary">برگشت به خانه</button>
+            </a>
+              </center>

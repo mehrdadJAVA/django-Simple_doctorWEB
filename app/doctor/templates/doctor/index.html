@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+{% load jalali_tags %}
+{% load static %}
+{% load widget_tweaks %}
+{% comment %} {% load widget_tweaks %} {% endcomment %}
+<html lang="fa" rtl="right">
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel ="stylesheet" type="text/css" href ="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css' %} ">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/style.css' %} ">
+    <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/all.min.css' %} ">
+</head>
+
+<body>
+
+
+   {%if messages%}
+    {%for msg in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h3 style='text-align: center;'>{{msg}}</h3> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {%endfor%}
+    {%endif%}
+
+    <header class="header" >
+
+    
+ 
+
+        <style>
+            form {
+               
+               
+                background: #f4f7f8;
+             
+              }
+        </style>
+        <a href="#" id="logo"><span>درمانگاه</span> وقار</a>   
+    
+            <form class="form-inline" method = "POST">
+                {% csrf_token %}
+            <fieldset>
+                {% render_field form.name type="text"  placeholder="نام" class="form-control" %} 
+            </fieldset>         
+                <button style="height:40px;width:100px;" class="btn btn-outline-success my-2 my-sm-0" type="submit">جستوجو</button>
+        </form>
+     
+        <nav class="navbar" >
+   
+
+      
+            <a href="#">خانه</a>
+            <a href="visit">گرفتن نوبت</a>
+            <a href="doctorDetail">دکتر ها</a>
+    
+   
+
+        </nav>
+
+        <div class="icons">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+
+        </div>
+
+        <a href="#" id="menu_bars" class="fas fa-bars"></a>
+    </header>
+
+
+
+    <div class="action-checkbox-column"> 
+<h4 style="text-align:center;"> با ما درمان خواهیی شد</h4>
+        <img src="{% static 'doctor/images/co.jpg' %}" style="height: 90%;width: 100%;" alt="">
+        <center>
+        
+        </center>
+   </div>
+
+
+
+
+        {% comment %} <div class="main-text">
+<center>
+            <br>
+            <h2 style=""> درمانگاه پوست و مو وقار </h2>
+            <h4> با ما درمان خواهیی شد</h4>
+
+            <button>دریافت  نوبت</button>
+</center>
+        </div> {% endcomment %}
+      
+    <!-- services we provide -->
+    <div class="service-section">
+        <h2 id="ourservices"> نوبت</h2>
+        <div class="inner-service-section">
+            <a href="visit">
+                <div class="service-box">
+                    <i class="fas fa-user-friends"></i>
+                    <h2>دریافت نوبت </h2>
+                    <p>برای دریافت نوبت الزامیست ویزیت رو پرداخت کنید</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+    <!-- services we provide ended -->
+
+    <!-- how we works -->
+    <div class="work-section">
+        <div class="inner-work-section">
+            <h2>دکتر علیار محمدی متخصص اورتوپرتی و رعی درمانگاه وقار می</h2>
+            <br>
+            <p class="text-work">
+                <h3> ادرس : تبریز خیابان مفتح جنب مسجد انبار سردار </h3>
+            </p>
+            <div class="myimages">
+                <div class="inner-images">
+                    <img src="{% static 'doctor/images/work1.png' %}" alt="">
+                </div>
+                <div class="inner-images">
+                    <img src="{% static 'doctor/images/work2.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="inner-work-section scnclass">
+            <h2>خدمات</h2>
+            <p class="creative-text">رفع جوش صورت , جوش بدن , با مشاوره رایگان در مطب و درمان با دو نسخه پزشک جوش یک جساسیت هست اکثرا از کبد افراد ترشح میکند و باید زود درمان شود و نبایذ به جوش دست زد امکان داره عفونت داخلی سبب شود </p>
+            <p class="creative-text">درمان قارچ دور لب و بدن قارچ از رعایت نکردن بهداشت فردی به وجود میاد مثل صدف یک بیماری اقزما هست قارچ و صدف قابل درمان هستن ولی اگه زود درمان نشود باغث بروز بیماری های دیگه میشود درمان قارچ و صدف طیدو ماه قابل درمان هست</p>
+        </div>
+    </div>
+
+
+    <!-- how we works ended -->
+
+
+    <!-- our gallery -->
+    <div class="gallery">
+        <h2 class="galleryheading"><span>عکس های </span> درمانگاه</h2>
+        <div class="main-gallery">
+
+            <div class="gallery-box">
+                <img src="{% static 'doctor/images/gallery1.png'%}" alt="">
+            </div>
+            <div class="gallery-box">
+                <img src="{% static 'doctor/images/gallery2.png' %}" alt="">
+            </div>
+            <div class="gallery-box">
+                <img src="{%static 'doctor/images/gallery3.png'%}" alt="">
+            </div>
+            <div class="gallery-box">
+                <img src="{%static 'doctor/images/gallery4.png'%}" alt="">
+            </div>
+            <div class="gallery-box">
+                <img src="{%static 'doctor/images/gallery5.png'%}" alt="">
+            </div>
+            <div class="gallery-box">
+                <img src="{%static 'doctor/images/gallery6.png'%}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- our gallery ended -->
+
+    <!-- our team seaction -->
+    <div class="ourteam-section">
+        <h2><span>تیم</span> وقار</h2>
+        <div class="ourteam-inner">
+            <div class="section-box">
+                <img src="{%static 'doctor/images/ourteam1.png'%}" alt="">
+                <h3>اقای رضا میرقلاح</h3>
+                <p> سر پرستار اتاق عمل</p>
+                <div class="team-social-links">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="section-box">
+                <img src="{%static 'doctor/images/ourteam2.png'%}" alt="">
+                <h3>دکتر مسعود کارگر</h3>
+                <p> مسول بیهوشی</p>
+                <div class="team-social-links">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="section-box">
+                <img src="{%static 'doctor/images/ourteam3.png'%}" alt="">
+                <h3>خانم دیبایی</h3>
+                <p> سز پرستار</p>
+                <div class="team-social-links">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+            <div class="section-box">
+                <img src="{%static 'doctor/images/ourteam4.png'%}" alt="">
+                <h3>دکنر پیراهش</h3>
+                <p>مدیر عامل </p>
+                <div class="team-social-links">
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- our team seaction -->
+
+    <!-- creating footer -->
+
+    <div class="main-footer">
+        <div class="inner-footer">
+            <h2>created by jamali</h2>
+        </div>
+
+
+        <!-- creating footer -->
+
+
+
+        <script src = "{% static 'doctor/js/script.js'  %} " ></script>
+        <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+        <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+</body>
+
+</html>
