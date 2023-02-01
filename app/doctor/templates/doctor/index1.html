@@ -1,0 +1,261 @@
+{% load jalali_tags %}
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درمانگاه شهر</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- bootstrap cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+    <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/style1.css' %} ">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header fixed-top">
+   
+        <div class="container">
+
+     {%if messages%}
+        {%for msg in messages%}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <h3 style='text-align: center;'>{{msg}}</h3> 
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {%endfor%}
+        {%endif%}
+        
+            <div class="row align-items-center justify-content-between">
+
+                <a href="home" class="logo">درمانگاه <span>شهر</span></a>
+
+            <form class="form-inline" method = "POST">
+                {% csrf_token %}
+                <fieldset>
+                {% render_field form.name type="text"  placeholder="نام دکتر" class="box" %} 
+                </fieldset>         
+                <button style="height:40px;width:60px;" class="search-label-icon-btn" type="submit">جستوجو</button>
+            </form>
+
+                <nav class="nav">
+                    <a href="home">خانه</a>
+                    <a href="about">درباره ما</a>
+                    <a href="doctorDetail">دکتر ها</a>
+                    <a href="visit">دریافت نوبت</a>
+                </nav>
+
+                <a href="visit" class="link-btn">دریافت نوبت</a>
+
+                <div id="menu-btn" class="fas fa-bars"></div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="container">
+
+            <div class="row min-vh-100 align-items-center">
+                <div class="content text-center text-md-left">
+                    <h3>به درمانگاه شهر خوش امدی</h3>
+                    <p style="color:black">برای نوبت دهی انلاین به بخش دریافت نوبت برید و فرم را پر کیند تا وقت برای شما رزرو شود. قبل از دریافت نوبت اریخ خصور دکتر در درمانکاه رو چک کنید</p>
+                    <a href="visit" class="link-btn">دریافت نوبت</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 image">
+                    <img src="{% static 'doctor/images/about-img.jpg'%}" class="w-100 mb-5 mb-md-0" alt="">
+                </div>
+
+                <div class="col-md-6 content">
+                    <span>درباره ما</span>
+                    <h3>درمانگاه شهر  با بیش از 20 سال سابقه</h3>
+                    <p>درمانگاه با دکتر های فوق تخصصی اماده خدمات به شما عزیزان است  با مدیریت دکتر کاظمی فارق تخصیل دانشگاه هامبورک  در درمانگاه شهر کاشت دندان ولمینت وجرمگیری انجام میشود  بصورت نقد واقسات پذیرش میشود  قرارداد با تمام بیمه ها </p>
+                    <br>
+                    <br>
+
+                    <a href="about" class="link-btn">بیشتر بخوانید</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+<hr>
+    <!-- about section ends -->
+
+    <!-- services section starts  -->
+
+    {% comment %} <section class="services" id="services">
+
+        <h1 class="heading"> خدمات</h1>
+
+        <div class="box-container container">
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-1.svg'%}" alt="">
+                <h3>جرم گیری</h3>
+                <p>جرم گیری برای افرادی که دیگه از دست دادن دندان نمیترسن مفیده چون اگر در جوانی زیاد جرم گیری شود دندان پوک میشود  </p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-2.svg'%}" alt="">
+                <h3>پر کردن دندان های شکسته</h3>
+                <p>پر کردن دندان با تضمین  با دستگاه های فوق پیشرفته</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-3.svg'%}" alt="">
+                <h3>Oral hygiene experts</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-4.svg'%}" alt="">
+                <h3>Root canal specialist</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-5.svg'%}" alt="">
+                <h3>Live dental advisory</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/icon-6.svg'%}" alt="">
+                <h3>Cavity inspection</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, minima?</p>
+            </div>
+
+        </div>
+
+    </section> {% endcomment %}
+
+    <!-- services section ends -->
+
+    <!-- process section starts  -->
+
+    <section class="process">
+
+        <h1 class="heading">گارانتی</h1>
+
+        <div class="box-container container">
+
+            <div class="box">
+                <img src="{% static 'doctor/images/process-1.png'%}" alt="">
+                <h3>زیبایی دندان</h3>
+                <p>زیبایی دندان به منطور ترتیب بودن دندان جرم گیری صاف بودن و حدود 3 ماه زمان میبره</p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/process-2.png'%}" alt="">
+                <h3>دندانپزشکی کودکان                </h3>
+                <p>برای کودکانی که ناره دندوناشون میتوان جلوگیری کرد رو دراوردن  برای جلوگیری از پوکی و بلند یا خم بودنشان </p>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'doctor/images/process-3.png'%}" alt="">
+                <h3>ایپلنت</h3>
+                <p>ایپلنت دندان حدود 1 سال طول میکشه و بعدش درمانگه شهر گارانتی 15 ساله برای دندون های شما عزیزان میدهذ</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container container">
+
+            <div class="box">
+                <i class="fas fa-phone"></i>
+                <h3>شماره تماس</h3>
+                <p>041-32347112</p>
+                <p>041-32347113</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>ادرس </h3>
+                <p>تبریز : خیابان ولیعصر </p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-clock"></i>
+                <h3> ساعات کاری</h3>
+                <p> داعمی</p>
+            </div>
+
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>ادرس ایمیل </h3>
+                <p>shahrda@gmail.com</p>
+                <p>shahrda@gmail.com</p>
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <!-- footer section ends -->
+
+
+
+
+
+
+
+
+
+
+    <!-- custom js file link  -->
+    
+    <script src = "{% static 'doctor/js/script1.js'  %} " ></script>
+    <link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+    <script src="{% static 'admin/js/django_jalali.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -37,7 +37,6 @@ header {
 header #logo {
     font-size: 3rem;
     color: black;
-    display: flex;
 }
 
 header #logo span {
@@ -48,30 +47,23 @@ header .navbar a {
     font-size: 1.5rem;
     color: var(--fontcolor);
     margin-left: 1.5rem;
-    display: flex;
 }
 
 .icons i {
     font-size: 2rem;
     color: var(--fontcolor);
     margin-left: 1rem;
-    flex-wrap: wrap;
 }
 
 header #menu_bars {
     font-size: 2rem;
     color: var(--fontcolor);
     display: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-wrap: wrap;
 }
 
 header .navbar.active {
     left: 0;
     transition: .5s;
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .main-image {
@@ -83,15 +75,14 @@ header .navbar.active {
     height: 100vh;
 }
 
-
-/* .container {
-    width: 200%;
+.container {
+    width: 100%;
     padding-top: 8.5rem;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: 200vh;
-} */
+    height: 100vh;
+}
 
 .container .main-text {
     width: 50%;

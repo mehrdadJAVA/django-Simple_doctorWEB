@@ -13,7 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
-    <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/style.css' %} ">
+     <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/style.css' %} ">
     <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/all.min.css' %} ">
 </head>
 
@@ -29,17 +29,10 @@
     {%endfor%}
     {%endif%}
 
-    <header class="header" >
-
-    
- 
-
+{% comment %} <header class="header" >
         <style>
             form {
-               
-               
                 background: #f4f7f8;
-             
               }
         </style>
         <a href="#" id="logo"><span>درمانگاه</span> وقار</a>   
@@ -53,16 +46,67 @@
         </form>
      
         <nav class="navbar" >
-   
 
-      
+
+   
             <a href="#">خانه</a>
             <a href="visit">گرفتن نوبت</a>
             <a href="doctorDetail">دکتر ها</a>
     
    
 
-        </nav>
+        </nav> 
+         {% endcomment %}
+
+
+
+
+
+         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+
+
+
+
+
+
+
 
         <div class="icons">
             <i class="fab fa-linkedin"></i>
@@ -70,32 +114,29 @@
             <i class="fab fa-twitter"></i>
 
         </div>
-
         <a href="#" id="menu_bars" class="fas fa-bars"></a>
     </header>
 
 
 
+
+{% comment %} "{% static 'doctor/images/co.jpg' %}" {% endcomment %}
+
     <div class="action-checkbox-column"> 
-<h4 style="text-align:center;"> با ما درمان خواهیی شد</h4>
-        <img src="{% static 'doctor/images/co.jpg' %}" style="height: 90%;width: 100%;" alt="">
-        <center>
+        <img src= style="height: 90%;width: 100%;" alt="">
+        <div class="bg-image" 
+        style="background-image: url('/static/doctor/images/y.jpg');height:100vh">
+       <center>
+        <h2>rgtetgg</h2>
+       </center>
         
-        </center>
    </div>
 
 
 
 
-        {% comment %} <div class="main-text">
-<center>
-            <br>
-            <h2 style=""> درمانگاه پوست و مو وقار </h2>
-            <h4> با ما درمان خواهیی شد</h4>
-
-            <button>دریافت  نوبت</button>
-</center>
-        </div> {% endcomment %}
+   
+   
       
     <!-- services we provide -->
     <div class="service-section">

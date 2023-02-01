@@ -6,7 +6,7 @@ from jalali_date import datetime2jalali
 import datetime
 from django.contrib import messages
 
-
+# --- home and search function -----
 def Home_View(request):
     List =[]
     form = Search_Form()
@@ -18,7 +18,6 @@ def Home_View(request):
                 print(List)
                 try :
                     Doctor_model_Data = Doctor_model.objects.get(lastName = str(i.data))  
-                    print('77777777777777777777777777')
         
                      
                     
@@ -53,19 +52,19 @@ def Home_View(request):
                     print(i.data)
                     return render(request,'doctor/search.html',con )
                 except:
-                    messages.success(request,(' tjikl;gr '))
-                    return render(request,'doctor/index.html',{'form':form})
+                    messages.success(request,(' جستوجو یافت نشد'))
+                    return render(request,'doctor/index1.html',{'form':form})
 
             else:
-                messages.success(request,('پیدا نشد'))
+                messages.success(request,('جستوجو یافت نشد'))
 
-                return render(request,'doctor/index.html',{'form':form})
+                return render(request,'doctor/index1.html',{'form':form})
                 
 
-    return render(request,'doctor/index.html',{'form':form})
+    return render(request,'doctor/index1.html',{'form':form})
 
 
-# ----- وزیت کاربر ------- #
+# --- visit  -----
 def Visit_View(request):
     today = datetime.datetime.now()
     today_now = datetime2jalali(today)
@@ -359,7 +358,7 @@ def Visit_View(request):
 
 
 
-# ------ مشخصات دکتر ----- #
+# ------   ----- #
 def Doctor_Del_View(request):
     Doctor = Doctor_model.objects.all()
     
@@ -436,4 +435,9 @@ def Doctor_SRECH_View(request):
                                               'come3':come3,'come2':come2,
                                               'price':Price,'doctor_img':Doctor_model_Data.doctor_img}
     return render(request,'doctor/search.html',con)
-            
+
+
+
+
+def About(request):
+    return render(request,'doctor/about.html',{})

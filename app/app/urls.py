@@ -14,7 +14,9 @@ urlpatterns = [
     path('doctor/visit_OK',Visit_View),
     path('doctor/doctorDetail',Doctor_Del_View),
     path('doctor/search',Doctor_SRECH_View),
-    
+    path('doctor/about',About),
+
+        
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) #not both
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

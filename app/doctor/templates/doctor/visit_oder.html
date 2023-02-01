@@ -1,30 +1,55 @@
+{% load jalali_tags %}
+{% load static %}
+
+{% load widget_tweaks %}
+<html>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نتیجه نوبت</title>
+  <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- bootstrap cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css">
+  <link rel ="stylesheet" type="text/css" href ="{% static 'doctor/css/style1.css' %} ">
+
+</head>
 
 
+<body>
 
-<br>
-<br>
-<br>
-<center>
-<h3 style="font-family:verdana;">
-دکتر  در این تاریخ درمانگاه هست
-</h3>
+<section class="reviews" id="reviews">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-
-
-<div class="card" style="width: 30rem;">
- 
-    <hr>
-    <img class="card-img-top" src="{{doctor_img.url}}" alt="Card image cap" width="400" height="300">
-    <div class="card-body">
-      <h5 class="card-title">دکتر : {{name }} {{lastName}}</h5>
-      <p class="card-text">تاریخ حصور دکتر : {{come1}} , {{come2}} , {{come3}}</p>
-      <p class="card-text"> قیمت ویزیت : {{price}}</p>
-      <p class="card-text">  تحصص : {{Specialty}}</p>
-      <a href="/doctor/visit" class="btn btn-primary">نوبت</a>
-    </div>
-
+  <h1 class="heading">تاریخی  که انتخاب شد دکتر در درمانگه حضور ندارد   </h1>
+  <br>
+  <div class="box-container container">
+      <div class="box">
+          <img src="{{doctor_img.url}}" alt="">
+          <br>
+          <br>
+          <h3>دکتر : {{name }} {{lastName}}</h3>
+          <p> تخصص : {{Specialty}}</p>
+          <p> تاریخ حصور دکتر : {{come1}} </p>
+          <p> تاریخ حصور دکتر : {{come2}} </p>
+          <p> تاریخ حصور دکتر : {{come3}} </p>
+          
+          <p>قیمت ویزیت: {{price}}</p>
+      </div>
   </div>
-</center>
-</center>
+
+</section>
+
+
+
+
+<link rel="stylesheet" href="{% static 'admin/jquery.ui.datepicker.jalali/themes/base/jquery-ui.min.css' %}">
+<script src="{% static 'admin/js/django_jalali.min.js' %}">
+  <script src = "{% static 'doctor/js/script1.js'  %} " ></script>
+
+</script>
+
+
+</body>
+</html>

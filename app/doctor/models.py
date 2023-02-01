@@ -1,15 +1,18 @@
 from django.db import models
 from jalali_date import datetime2jalali
+#database form 'Mysql'
 
 
 
+
+# --- dactor model -----
 class Doctor_model(models.Model):
-    name = models.CharField(max_length=100,null=False)
-    lastName = models.CharField(max_length=100, null=False)
+    name = models.CharField(max_length=100,null=False , verbose_name='نام')
+    lastName = models.CharField(max_length=100, null=False, verbose_name='نام خانوادگی')
     
     one1 = 1
     tow2 = 2 
-    status2 = ((one1,'پوست و مو'),(tow2,'داخلی'))       
+    status2 = ((one1,' دندان پزشک '),(tow2,' دندان ساز '))       
     Specialty = models.IntegerField(choices=status2)
     Data_time_Doctor_come = models.DateTimeField()
     Data_time_Doctor_come1 = models.DateTimeField()
@@ -19,8 +22,8 @@ class Doctor_model(models.Model):
     price2 = 2
     price3 = 3
     price4 = 4
-    doctor_price_status = ((price1,'4000000'),(price2,'5000000'),(price3,'6000000'),(price4,'سه 7000000'))
-    visit_price =  models.IntegerField(choices=doctor_price_status)
+    doctor_price_status = ((price1,'4000000'),(price2,'5000000'),(price3,'6000000'),(price4,' 7000000'))
+    visit_price =  models.IntegerField(choices=doctor_price_status, verbose_name='قیمت ویزیت')
     doctor_img = models.ImageField(upload_to='media/')
     
     def _Data_time_Doctor_come(self):
@@ -46,10 +49,12 @@ class Doctor_model(models.Model):
         return self.lastName
 
 
+
+# --- nurse model -----
 class Nurse_Model (models.Model):
-    nurse_Nmae = models.CharField(max_length=100)
-    nurse_Lastname = models.CharField(max_length=1000)
-    natinalCode = models.CharField(max_length=100)
+    nurse_Nmae = models.CharField(max_length=100, verbose_name='نام پرستار')
+    nurse_Lastname = models.CharField(max_length=1000, verbose_name='نام خانوادگی ')
+    natinalCode = models.CharField(max_length=100 , verbose_name='کد ملی')
     nurse_img = models.ImageField(upload_to='media/')
     
     def __str__(self) :
@@ -57,13 +62,13 @@ class Nurse_Model (models.Model):
 
 
 
-
+# --- visit model -----
 class Visit_model(models.Model):
-    name = models.CharField(max_length=100,null=False)
-    lastName = models.CharField(max_length=100,null=False)
-    natinal_code = models.CharField(max_length=100,null=False)
-    age = models.IntegerField()
-    phone_num = models.CharField(max_length=100)
+    name = models.CharField(max_length=100,null=False , verbose_name='نام')
+    lastName = models.CharField(max_length=100,null=False, verbose_name='نام خانوادگی')
+    natinal_code = models.CharField(max_length=100,null=False, verbose_name='کدملی')
+    age = models.IntegerField(verbose_name='سن')
+    phone_num = models.CharField(max_length=100,verbose_name='تلفن')
     mirid = models.BooleanField()
     doctor_choses =  models.ForeignKey(Doctor_model, on_delete=models.SET_NULL, null=True)
     
@@ -93,7 +98,7 @@ class Visit_model(models.Model):
               (six,'13:00'),(seven,'14:00'),(eight,'15:00'),(nin,'16:00'),(ten,'17:00'),(eleven,'18:00')
               ,(towvelv,'19:00'),(thrertiin,'20:00'),(foutteen,'21:00'))
     
-    doctor_time = models.IntegerField(choices=doctor_status)
+    doctor_time = models.IntegerField(choices=doctor_status,verbose_name='ساعت  ')
     Date_Time = models.DateTimeField()
     
     def Date_Time1(self):
